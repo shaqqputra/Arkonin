@@ -66,5 +66,8 @@ class LinkProject(models.Model):
     project = models.ForeignKey(Project, null=True, on_delete= models.CASCADE)
     expert = models.ForeignKey(Expert, null=True, on_delete= models.CASCADE)
 
+    def __str__(self):
+        return self.project
+
 
 
