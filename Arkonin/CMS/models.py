@@ -19,6 +19,7 @@ class Employee(models.Model):
     email = models.CharField(max_length=100, null = True)
     male = models.BooleanField(default=False)
     female = models.BooleanField(default=False)
+    test
 
 class Expert(models.Model):
     exp_name = models.ForeignKey(Employee, null = True, on_delete= models.SET_NULL)
