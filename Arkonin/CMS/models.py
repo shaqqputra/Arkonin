@@ -24,11 +24,9 @@ class Employee(models.Model):
     grade = models.ForeignKey(Grade, null = True, on_delete = models.SET_NULL)
     address = models.TextField(max_length=200, null = True)
     email = models.CharField(max_length=100, null = True)
-    male = models.BooleanField(default=False)
-    female = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.nip
+        return self.name
 
 class Expert(models.Model):
     exp_name = models.ForeignKey(Employee, null = True, on_delete= models.SET_NULL)
@@ -37,7 +35,7 @@ class Expert(models.Model):
     exp_graduate = models.DateField(auto_now=False, auto_now_add=False)
 
     def __str__(self):
-        return self.exp_name
+        return str(self.exp_name)
 
 class SKA(models.Model):
     exp_name = models.ForeignKey(Expert, null=True, on_delete= models.SET_NULL)
@@ -47,7 +45,7 @@ class SKA(models.Model):
     expire_date = models.DateField(auto_now=False, auto_now_add=False)
 
     def __str__(self):
-        return self.exp_name
+        return str(self.exp_name)
 
 
 class Project(models.Model):
@@ -67,7 +65,7 @@ class LinkProject(models.Model):
     expert = models.ForeignKey(Expert, null=True, on_delete= models.CASCADE)
 
     def __str__(self):
-        return self.project
+        return str(self.project)
 
 
 
