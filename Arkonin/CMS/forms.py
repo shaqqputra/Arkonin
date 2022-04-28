@@ -6,11 +6,11 @@ class PostForm(forms.ModelForm):
         model = Project
         fields = ['division','project_name', 'project_file', 'start_date', 'end_date', 'bast_date', 'bast_value']
 
-        widget = {
-            'division' : forms.Select(attrs={'class':'form-control'}),
-            'project_name' : forms.TextInput(attrs={'class':'form-control'}),
+        widgets = {
+            'division' : forms.Select(attrs={'class':'form-control', 'id':'inputGroupSelect01'}),
+            'project_name' : forms.TextInput(attrs={'class':'form-control round',}),
             'project_file' : forms.FileInput(attrs={'class':'form-control'}),
-            'start_date' : forms.DateInput(attrs={'class':'form-control'}),
+            'start_date' : forms.DateInput( format=('%d-%m-%Y'), attrs={'class':'form-control','type':'date','placeholder':'Select Your Date'}),
             'end_date' : forms.DateInput(attrs={'class':'form-control'}),
             'bast_date' : forms.DateInput(attrs={'class':'form-control'}),
             'bast_value' : forms.NumberInput(attrs={'class':'form-control'}),
