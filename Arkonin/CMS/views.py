@@ -8,7 +8,7 @@ from .forms import PostForm
 class homeView(CreateView):
     model = Project
     form_class = PostForm
-    template_name = 'function/add_project.html'
+    template_name = 'index.html'
 
 class addProjectView(CreateView):
     model = Project

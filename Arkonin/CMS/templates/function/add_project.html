@@ -16,7 +16,11 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group row align-items-center">
-                           {{ form }}
+                        <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            {{ form }}
+                            <br/>
+                            <button class="btn btn-lg btn-outline-primary">Submit</button>
                         </div>
                 </div>
             </div>
