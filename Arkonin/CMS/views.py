@@ -5,12 +5,12 @@ from .models import *
 from django.urls import reverse_lazy
 from .forms import PostForm
 
-class homeView(CreateView):
+class HomeView(CreateView):
     model = Project
     form_class = PostForm
     template_name = 'index.html'
 
-class addProjectView(CreateView):
+class AddProjectView(CreateView):
     model = Project
     template_name = 'function/add_project.html'
     form_class = PostForm
