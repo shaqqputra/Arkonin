@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.validators import MinValueValidator, MaxValueValidator
 from PIL import Image
 
 # ini semua model yang nantinya akan dipakai di dalam aplikasi management system ini.
@@ -76,7 +77,7 @@ class Project(models.Model):
     start_date = models.DateField(auto_now=False, auto_now_add=False)
     end_date = models.DateField(auto_now=False, auto_now_add=False)
     bast_date = models.DateField(auto_now=False, auto_now_add=False)
-    bast_value = models.CharField(max_length=3, null = True)
+    bast_value = models.IntegerField(max_length=3, null = True, validators=[MinValueValidator(1), MaxValueValidator(100)])
 
     def __str__(self):
         return self.project_name

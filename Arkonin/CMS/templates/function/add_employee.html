@@ -1,0 +1,144 @@
+{% extends 'base.html '%}
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Input Project</h4>
+            </div>
+
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12">
+                        <p>isi data projek anda disini, sesuai dengan hardcopy yang sudah dibuat.
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row align-items-center">
+                        <form class="form form-horizontal" method="POST" enctype="multipart/form-data">
+                            <div class="form-body">
+                                <div class="row">
+                                    {% csrf_token %}
+                                    <div class="form-body">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label> Divisi </label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="form-group has-icon-left">
+                                            <div class="position-relative">
+                                               {{ form.division }}
+                                                <div class="form-control-icon">
+                                                    <i class="bi bi-bookmark"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-body">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label> Nama Projek </label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="form-group has-icon-left">
+                                            <div class="position-relative">
+                                               {{ form.project_name }}
+                                                <div class="form-control-icon">
+                                                    <i class="bi bi-pencil-square"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-body">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label>  Tambah Dokumen </label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="form-group has-icon-left">
+                                            <div class="position-relative">
+                                               {{ form.project_file }}
+                                                <div class="form-control-icon">
+                                                    <i class="bi bi-file-plus"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-body">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label> Tanggal Mulai </label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="form-group has-icon-left">
+                                            <div class="position-relative">
+                                               {{ form.start_date }}
+                                                <div class="form-control-icon">
+                                                    <i class="bi bi-calendar-event"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-body">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label> Tanggal Selesai </label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="form-group has-icon-left">
+                                            <div class="position-relative">
+                                               {{ form.end_date }}
+                                               {% if form.errors %}
+                                               <small class="text-danger red">{{ form.errors.start_date }}</small>
+                                                {% endif %}
+                                                <div class="form-control-icon">
+                                                    <i class="bi bi-calendar-check"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-body">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label> Tanggal BAST </label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="form-group has-icon-left">
+                                            <div class="position-relative">
+                                               {{ form.bast_date }}
+                                                <div class="form-control-icon">
+                                                    <i class="bi bi-calendar-date"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-body">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label> Nilai BAST </label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="form-group has-icon-left">
+                                            <div class="position-relative">
+                                               {{ form.bast_value }}
+                                               {% if form.errors %}
+                                               <small class="text-danger red">{{ form.errors.bast_value }}</small>
+                                           {% endif %}
+                                                <div class="form-control-icon">
+                                                    <i class="bi bi-award"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br/>
+                                    <button style="margin-top:25px;" class="btn btn-lg btn-outline-primary">Submit</button>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -17,6 +17,8 @@ class SignUpForm(UserCreationForm):
         'password2',
         )
 
+# Ini validasi untuk semua field yang ada di dalam
+# self cleaned data untuk mengecek apakah Value tersebut sudah terdaftar dalam database atau belum
     def clean_first_name(self):
         first_name = self.cleaned_data.get('first_name')
         if not first_name:
@@ -46,8 +48,9 @@ class SignUpForm(UserCreationForm):
             return email
 
         raise forms.ValidationError('This Email Address Already In Use.')
+# End Comment
 
-
+# Ini validasi untuk mengecek apakah password yang ditulis dan password konfirmasi sama.
     def clean_password(self):
         cleaned_data = super(SignUpForm, self).clean()
         password = cleaned_data.get("password")
@@ -57,6 +60,8 @@ class SignUpForm(UserCreationForm):
             raise forms.ValidationError(
                 "Password Does Not Match"
             )
+# End Comment
+# End Comment
 
     def init(self, args, **kwargs):
             super(SignUpForm, self).init(args, **kwargs)

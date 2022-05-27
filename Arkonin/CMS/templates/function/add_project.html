@@ -121,6 +121,9 @@
                                                 <div class="form-group has-icon-left">
                                             <div class="position-relative">
                                                {{ form.bast_value }}
+                                               {% if form.errors %}
+                                               <small class="text-danger red">{{ form.errors.bast_value }}</small>
+                                           {% endif %}
                                                 <div class="form-control-icon">
                                                     <i class="bi bi-award"></i>
                                                 </div>
