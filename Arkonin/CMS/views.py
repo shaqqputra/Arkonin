@@ -10,9 +10,25 @@ class HomeView(CreateView):
     form_class = PostForm
     template_name = 'index.html'
 
+# Class View untuk Model Project dari detail hingga delete
+class ProjectView(ListView):
+    model = Project
+    template_name = 'data/table_project.html'
+    ordering = ['-start_date']
+
 class AddProjectView(CreateView):
     model = Project
     template_name = 'function/add_project.html'
     form_class = PostForm
     success_url = reverse_lazy('home')
 
+class UpdateProjectView(UpdateView):
+    model = Project
+
+# end comment
+
+# Class View untuk Model Karyawan dari detail hingga delete
+class AddEmployeeView(CreateView):
+    model = Employee
+
+# end Comment

@@ -48,7 +48,7 @@ class SignUpForm(UserCreationForm):
         raise forms.ValidationError('This Email Address Already In Use.')
 
 
-    def clean(self):
+    def clean_password(self):
         cleaned_data = super(SignUpForm, self).clean()
         password = cleaned_data.get("password")
         password2 = cleaned_data.get("password2")
