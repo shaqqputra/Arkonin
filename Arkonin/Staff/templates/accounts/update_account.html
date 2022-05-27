@@ -1,0 +1,67 @@
+{% extends 'base.html '%}
+{% block content %}
+<section id="multiple-column-form">
+    <div class="row match-height">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Ubah Setelan Akun Anda</h4>
+                </div>
+                <div class="card-content">
+                    <div class="card-body">
+                        <form class="form" method="POST">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <label for="first-name-column">First Name</label>
+                                        <input type="text" name="first_name" id="first-name-column" class="form-control"
+                                            placeholder="First Name" name="fname-column">
+                                            {% if form.errors %}
+                                            <small class="text-danger red">{{ form.errors.first_name }}</small>
+                                            {% endif %}
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <label for="last-name-column">Last Name</label>
+                                        <input type="text" name="last_name"id="last-name-column" class="form-control"
+                                            placeholder="Last Name" name="lname-column">
+                                            {% if form.errors %}
+                                            <small class="text-danger red">{{ form.errors.last_name }}</small>
+                                            {% endif %}
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <label for="city-column">Username</label>
+                                        <input type="text" name="username" id="city-column" class="form-control" placeholder="Username"
+                                            name="city-column">
+                                            {% if form.errors %}
+                                            <small class="text-danger red">{{ form.errors.username}}</small>
+                                            {% endif %}
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-12">
+                                    <div class="form-group">
+                                        <label for="country-floating">Email</label>
+                                        <input type="text" name="email" id="country-floating" class="form-control"
+                                            name="country-floating" placeholder="Email">
+                                            {% if form.errors %}
+                                            <small class="text-danger red">{{ form.errors.email}}</small>
+                                            {% endif %}
+                                    </div>
+                                </div>
+                                <div class="col-12 d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
+                                    <button type="reset" class="btn btn-light-secondary me-1 mb-1">Reset</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

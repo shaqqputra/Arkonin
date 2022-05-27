@@ -69,3 +69,47 @@ class SignUpForm(UserCreationForm):
             self.fields['username']
             self.fields['password1']
             self.fields['password2']
+
+class UpdateAccount(UserChangeForm):
+    email = forms.EmailField()
+    first_name = forms.CharField(max_length=100)
+    last_name = forms.CharField(max_length=100)
+
+    class Meta:
+        model = User
+        fields = ('username', 
+        'first_name', 
+        'last_name', 
+        'email',  
+        )
+
+    def clean_first_name(self):
+        first_name = self.cleaned_data.get('first_name')
+        if not first_name:
+            raise forms.ValidationError('This field is required')
+        return first_name
+
+    def clean_last_name(self):
+        last_name = self.cleaned_data.get('last_name')
+        if not last_name:
+            raise forms.ValidationError('This field is required')
+        return last_name
+
+    def clean_username(self):
+        username = self.cleaned_data.get('username')
+        try:
+            username = User.objects.get(username=username)
+        except User.DoesNotExist:
+            return username
+
+        raise forms.ValidationError('This username Address Already In Use.')
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        try:
+            email = User.objects.get(email=email)
+        except User.DoesNotExist:
+            return email
+
+        raise forms.ValidationError('This Email Address Already In Use.')
+# End Comment

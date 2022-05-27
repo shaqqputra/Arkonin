@@ -4,14 +4,13 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">Input Project</h4>
+                <h4 class="card-title">Input Karyawan</h4>
             </div>
 
             <div class="card-body">
                 <div class="row">
                     <div class="col-12">
-                        <p>isi data projek anda disini, sesuai dengan hardcopy yang sudah dibuat.
-                        </p>
+                        <p>Masukkan Data Karyawan Disini</p>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group row align-items-center">
@@ -22,12 +21,12 @@
                                     <div class="form-body">
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <label> Divisi </label>
+                                                <label> Username </label>
                                             </div>
                                             <div class="col-md-8">
                                                 <div class="form-group has-icon-left">
                                             <div class="position-relative">
-                                               {{ form.division }}
+                                               {{ form.user }}
                                                 <div class="form-control-icon">
                                                     <i class="bi bi-bookmark"></i>
                                                 </div>
@@ -37,12 +36,12 @@
                                     <div class="form-body">
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <label> Nama Projek </label>
+                                                <label> NIP </label>
                                             </div>
                                             <div class="col-md-8">
                                                 <div class="form-group has-icon-left">
                                             <div class="position-relative">
-                                               {{ form.project_name }}
+                                               {{ form.nip }}
                                                 <div class="form-control-icon">
                                                     <i class="bi bi-pencil-square"></i>
                                                 </div>
@@ -52,12 +51,12 @@
                                     <div class="form-body">
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <label>  Tambah Dokumen </label>
+                                                <label>  Divisi </label>
                                             </div>
                                             <div class="col-md-8">
                                                 <div class="form-group has-icon-left">
                                             <div class="position-relative">
-                                               {{ form.project_file }}
+                                               {{ form.division }}
                                                 <div class="form-control-icon">
                                                     <i class="bi bi-file-plus"></i>
                                                 </div>
@@ -67,12 +66,12 @@
                                     <div class="form-body">
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <label> Tanggal Mulai </label>
+                                                <label> Jabatan </label>
                                             </div>
                                             <div class="col-md-8">
                                                 <div class="form-group has-icon-left">
                                             <div class="position-relative">
-                                               {{ form.start_date }}
+                                               {{ form.grade }}
                                                 <div class="form-control-icon">
                                                     <i class="bi bi-calendar-event"></i>
                                                 </div>

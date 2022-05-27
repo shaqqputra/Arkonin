@@ -16,6 +16,8 @@
         <link rel="stylesheet" href="{% static '/vendors/iconly/bold.css' %}">
         <link rel="stylesheet" href=" {% static '/vendors/perfect-scrollbar/perfect-scrollbar.css' %}">
         <link rel="stylesheet" href=" {% static '/vendors/bootstrap-icons/bootstrap-icons.css' %}">
+        <link rel="stylesheet" href="{% static '/vendors/simple-datatables/style.css' %}">
+        <script src="{% static '/vendors/simple-datatables/simple-datatables.js' %}"></script>
 
         {% comment %} CSS Codeable {% endcomment %}
 
@@ -59,7 +61,7 @@
                             <a href="component-alert.html">Akun Anda</a>
                         </li>
                         <li class="submenu-item ">
-                            <a href="component-badge.html">Ubah Setelan</a>
+                            <a href="{% url 'update-profile' user.id %}">Ubah Setelan</a>
                         </li>
                         <li class="submenu-item ">
                             <a href="component-breadcrumb.html">Ubah Profile</a>

@@ -1,5 +1,6 @@
+from pyexpat import model
 from django import forms
-from .models import Project
+from .models import Project, Employee
 from django.core.files.images import get_image_dimensions
 
 class PostForm(forms.ModelForm):
@@ -58,3 +59,25 @@ class PostForm(forms.ModelForm):
             'bast_value' : forms.NumberInput(attrs={'class':'form-control',}),
         }
 
+class EmployeeForm(forms.ModelForm):
+
+    class Meta:
+        model = Employee
+        fields = ['user',
+        'nip', 
+        'name', 
+        'division', 
+        'grade', 
+        'address', 
+        'email',
+        'profile_pic']
+
+        widgets = {
+            'user' : forms.Select(attrs={'class':'form-control', 'id':'inputGroupSelect01'}),
+            'nip' : forms.TextInput(attrs={'class':'form-control round',}),
+            'division' : forms.Select(attrs={'class':'form-control' , 'id':'inputGroupSelect01'}),
+            'grade' : forms.Select(attrs={'class':'form-control' , 'id':'inputGroupSelect01'}),
+            'end_date' : forms.DateInput(format=('%d-%m-%Y'), attrs={'class':'form-control','type':'date','placeholder':'Select Your Date', 'id' : 'enddate'}),
+            'bast_date' : forms.DateInput(format=('%d-%m-%Y'), attrs={'class':'form-control','type':'date','placeholder':'Select Your Date'}),
+            'bast_value' : forms.NumberInput(attrs={'class':'form-control',}),
+        }
