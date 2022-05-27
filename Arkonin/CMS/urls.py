@@ -9,6 +9,7 @@ urlpatterns = [
     path('add_project/', AddProjectView.as_view(), name="add-project"),
     path('project/', ProjectView.as_view(), name="project"),
     path('project/edit/<int:pk>', UpdateProjectView.as_view(), name="update-project"),
+    path('project/delete/<int:id>', views.delete, name='delete'),
 
     # URL Employee
     path('add_employee/', AddEmployeeView.as_view(), name="add-employee"),

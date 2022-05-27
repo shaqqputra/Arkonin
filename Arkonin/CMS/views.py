@@ -3,6 +3,7 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from .models import *
 from django.urls import reverse_lazy
 from django.urls import reverse
+from django.http import HttpResponse, HttpResponseRedirect
 from .forms import PostForm, EmployeeForm
 
 
@@ -49,6 +50,10 @@ class UpdateProjectView(UpdateView):
     form_class = PostForm
     success_url = reverse_lazy('project')
 
+def delete(request, id):
+    project = Project.objects.get(id=id)
+    project.delete()
+    return HttpResponseRedirect(reverse('project'))
     
 
 # end comment
@@ -58,6 +63,7 @@ class AddEmployeeView(CreateView):
     model = Employee
     form_class = EmployeeForm
     template_name = 'function/add_employee.html'
-    success_url = reverse_lazy('homes')
+    success_url = reverse_lazy('home')
+    Employee.objects.get(user=1 )
 
 # end Comment

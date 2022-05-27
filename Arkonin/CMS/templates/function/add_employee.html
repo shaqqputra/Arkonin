@@ -28,10 +28,13 @@
                                             <div class="position-relative">
                                                {{ form.user }}
                                                 <div class="form-control-icon">
-                                                    <i class="bi bi-bookmark"></i>
+                                                    <i class="bi bi-file-person"></i>
                                                 </div>
                                             </div>
                                         </div>
+                                        {% if form.errors %}
+                                        <small class="text-danger red">{{ form.errors.user}}</small>
+                                        {% endif %}
                                     </div>
                                     <div class="form-body">
                                         <div class="row">
@@ -43,10 +46,31 @@
                                             <div class="position-relative">
                                                {{ form.nip }}
                                                 <div class="form-control-icon">
-                                                    <i class="bi bi-pencil-square"></i>
+                                                    <i class="bi bi-card-text"></i>
                                                 </div>
                                             </div>
                                         </div>
+                                        {% if form.errors %}
+                                        <small class="text-danger red">{{ form.errors.nip}}</small>
+                                        {% endif %}
+                                    </div>
+                                    <div class="form-body">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label> Nama </label>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div class="form-group has-icon-left">
+                                            <div class="position-relative">
+                                               {{ form.name }}
+                                                <div class="form-control-icon">
+                                                    <i class="bi bi-person"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% if form.errors %}
+                                        <small class="text-danger red">{{ form.errors.name}}</small>
+                                        {% endif %}
                                     </div>
                                     <div class="form-body">
                                         <div class="row">
@@ -58,7 +82,7 @@
                                             <div class="position-relative">
                                                {{ form.division }}
                                                 <div class="form-control-icon">
-                                                    <i class="bi bi-file-plus"></i>
+                                                    <i class="bi bi-bookmark"></i>
                                                 </div>
                                             </div>
                                         </div>
@@ -73,7 +97,7 @@
                                             <div class="position-relative">
                                                {{ form.grade }}
                                                 <div class="form-control-icon">
-                                                    <i class="bi bi-calendar-event"></i>
+                                                    <i class="bi bi-briefcase"></i>
                                                 </div>
                                             </div>
                                         </div>
@@ -81,50 +105,50 @@
                                     <div class="form-body">
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <label> Tanggal Selesai </label>
+                                                <label> Alamat  </label>
                                             </div>
                                             <div class="col-md-8">
                                                 <div class="form-group has-icon-left">
                                             <div class="position-relative">
-                                               {{ form.end_date }}
-                                               {% if form.errors %}
-                                               <small class="text-danger red">{{ form.errors.start_date }}</small>
-                                                {% endif %}
+                                               {{ form.address }}
                                                 <div class="form-control-icon">
-                                                    <i class="bi bi-calendar-check"></i>
+                                                    <i class="bi bi-house"></i>
                                                 </div>
                                             </div>
                                         </div>
+                                        {% if form.errors %}
+                                        <small class="text-danger red">{{ form.errors.address}}</small>
+                                        {% endif %}
                                     </div>
                                     <div class="form-body">
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <label> Tanggal BAST </label>
+                                                <label> Email </label>
                                             </div>
                                             <div class="col-md-8">
                                                 <div class="form-group has-icon-left">
                                             <div class="position-relative">
-                                               {{ form.bast_date }}
+                                               {{ form.email }}
                                                 <div class="form-control-icon">
-                                                    <i class="bi bi-calendar-date"></i>
+                                                    <i class="bi bi-envelope"></i>
                                                 </div>
                                             </div>
                                         </div>
+                                        {% if form.errors %}
+                                        <small class="text-danger red">{{ form.errors.email}}</small>
+                                        {% endif %}
                                     </div>
                                     <div class="form-body">
                                         <div class="row">
                                             <div class="col-md-4">
-                                                <label> Nilai BAST </label>
+                                                <label> Profile Picture </label>
                                             </div>
                                             <div class="col-md-8">
                                                 <div class="form-group has-icon-left">
                                             <div class="position-relative">
-                                               {{ form.bast_value }}
-                                               {% if form.errors %}
-                                               <small class="text-danger red">{{ form.errors.bast_value }}</small>
-                                           {% endif %}
+                                               {{ form.profile_pic }}
                                                 <div class="form-control-icon">
-                                                    <i class="bi bi-award"></i>
+                                                    <i class="bi bi-image"></i>
                                                 </div>
                                             </div>
                                         </div>

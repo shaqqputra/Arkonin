@@ -44,10 +44,12 @@
                             <td>{{ x.start_date }}</td>
                             <td>{{ x.end_date }}</td>
                             <td>{{ x.bast_value }}</td>
+                            {% if request.user.is_staff %}
                             <td>
                                 <a href="{% url 'update-project' x.pk %}"><i class="bi bi-pencil"></i><a>
-                                <i class="bi bi-trash"></i>
+                                <a href="delete/{{ x.id }}" onclick="return confirm('Are you sure you want to delete this data?');"><i class="bi bi-trash"></i></a>
                             </td>
+                            {% endif x%}
                             {% endfor %}
                         </tr>
                     </tbody>
