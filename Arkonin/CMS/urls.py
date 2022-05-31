@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from .views import HomeView, AddProjectView, ProjectView, UpdateProjectView, AddEmployeeView
+from .views import HomeView, AddProjectView, ProjectView, UpdateProjectView, AddEmployeeView, EmployeeView, UpdateEmployeeView
 from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
@@ -13,4 +13,6 @@ urlpatterns = [
 
     # URL Employee
     path('add_employee/', AddEmployeeView.as_view(), name="add-employee"),
+    path('employee/', EmployeeView.as_view(), name="employee"),
+    path('employee/edit/<int:pk>', UpdateEmployeeView.as_view(), name="update-employee"),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

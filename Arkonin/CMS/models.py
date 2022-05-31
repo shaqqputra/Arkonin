@@ -23,7 +23,7 @@ class Grade(models.Model):
 
 # ini model karyawan secara general.
 class Employee(models.Model):
-    user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE, unique=True)
     nip = models.CharField(max_length=11, null = True)
     name = models.CharField(max_length=150, null = True)
     division = models.ForeignKey(Division, null = True, on_delete = models.SET_NULL)

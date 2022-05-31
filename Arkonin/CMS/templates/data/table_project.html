@@ -49,7 +49,7 @@
                                 <a href="{% url 'update-project' x.pk %}"><i class="bi bi-pencil"></i><a>
                                 <a href="delete/{{ x.id }}" onclick="return confirm('Are you sure you want to delete this data?');"><i class="bi bi-trash"></i></a>
                             </td>
-                            {% endif x%}
+                            {% endif %}
                             {% endfor %}
                         </tr>
                     </tbody>

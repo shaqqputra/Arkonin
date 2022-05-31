@@ -4,7 +4,7 @@ from .models import *
 from django.urls import reverse_lazy
 from django.urls import reverse
 from django.http import HttpResponse, HttpResponseRedirect
-from .forms import PostForm, EmployeeForm
+from .forms import PostForm, EmployeeForm, UpdateEmployeeForm
 
 
     
@@ -37,6 +37,7 @@ class ProjectView(ListView):
     ordering = ['start_date']
     project = Project.objects.all()
     
+    
 
 class AddProjectView(CreateView):
     model = Project
@@ -66,4 +67,19 @@ class AddEmployeeView(CreateView):
     success_url = reverse_lazy('home')
     Employee.objects.get(user=1 )
 
+class EmployeeView(ListView):
+    model = Employee
+    template_name = 'data/table_employee.html'
+    project = Employee.objects.all()
+
+class UpdateEmployeeView(UpdateView):
+    model = Employee
+    template_name = 'function/edit_employee.html'
+    form_class = UpdateEmployeeForm
+    success_url = reverse_lazy('employee')
+
+def delete(request, id):
+    employee = Employee.objects.get(id=id)
+    employee.delete()
+    return HttpResponseRedirect(reverse('employee'))
 # end Comment
